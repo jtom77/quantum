@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{physics}
+\begin{document}
+
+
+\section{Exercise 4.1}
+
+The eigenstates of the Pauli Matrices are:
+
+\begin{align*}
+    \ket{z_1} &= \ket{0} = \cos (0) \ket{0} + e^{i\cdot 0} \sin (0) \ket{1}\\
+    \ket{z_{-1}} &= \ket{1} = \cos\left(\frac{\pi}{2}\right) \ket{0} + e^{i\cdot 0} \left(\sin\frac{\pi}{2}\right) \ket{1}\\
+    \ket{x_1} &= \frac{1}{2}\ket{0} + \frac{1}{2}\ket{1} = \cos\left( \frac{\pi}{4} \right) \ket{0} + e^{i\cdot 0} \sin\left( \frac{\pi}{4} \right) \ket{1}\\
+    \ket{x_{-1}} &= \frac{1}{2}\ket{0} - \frac{1}{2}\ket{1} = \cos\left( \frac{\pi}{4} \right) \ket{0} + e^{i\cdot \pi} \sin\left( \frac{\pi}{4} \right) \ket{1}\\
+    \ket{y_1} &= \frac{1}{2}\ket{0} + i \frac{1}{2}\ket{1} = \cos\left( \frac{\pi}{4} \right) \ket{0} + e^{i\cdot \frac{\pi}{2}} \sin\left( \frac{\pi}{4} \right) \ket{1}\\
+    \ket{y_{-1}} &= \frac{1}{2}\ket{0} - i \frac{1}{2}\ket{1} = \cos\left( \frac{\pi}{4} \right) \ket{0} + e^{- i\cdot \frac{\pi}{2}} \sin\left( \frac{\pi}{4} \right) \ket{1}
+\end{align*}
+
+\section{Exercise 4.2}
+
+
+\begin{align*}
+ \exp(iAx) &= \sum_{k=0}^\infty A^k \frac {(ix)^k}{k!} =
+ \sum_{k=0}^\infty A^{2k} \frac {(ix)^{2k}}{(2k)!}  + 
+ \sum_{k=0}^\infty A^{2k+1} \frac {(ix)^{2k+1}}{(2k+1)!} \\
+ &= \sum_{k=0}^\infty (-1)^k \frac {x^{2k}}{(2k)!} I + 
+ \sum_{k=0}^\infty (-1)^k i \frac {x^{2k+1}}{(2k+1)!} A =
+ \cos(x) I + i\sin(x)A
+\end{align*}
+
+\section{Exercise 4.2}
+
+\begin{align*}
+    R_z \left(\frac{\pi}{4} \right) = 
+    \begin{pmatrix}
+        e^{-i\frac{\pi}{8}} & 0 \\  0 & e^{i\frac{\pi}{8}}
+    \end{pmatrix} 
+    = 
+    e^{i\frac{\pi}{8}} 
+    \begin{pmatrix}
+        1 & 0 \\  0 & e^{i\frac{\pi}{4}}
+    \end{pmatrix} 
+    = 
+    e^{i\frac{\pi}{8}}  T 
+\end{align*}
+
+\section{Exercise 5.1}
+
+Let $\omega_N = e^{2\pi i / N}$. Then the definition (5.2) for the Fourier Transform $U$ gives us
+
+\[
+U\ket{j} = 
+\frac{1}{\sqrt N} \sum_{k=0}^{N-1} e^{2\pi i jk / N} \ket{k} = 
+\frac{1}{\sqrt N} \sum_{k=0}^{N-1} \omega_N^{jk} \ket{k}.
+\]
+The matrix element $a_{ij}$ for $U$ in the standard basis is given by
+\[
+\bra{i} U\ket{j} = 
+\frac{1}{\sqrt N} \sum_{k=0}^{N-1} \omega_N^{jk} \bra{i}\ket{k} = 
+\frac{1}{\sqrt N} \sum_{k=0}^{N-1} \omega_N^{jk} \delta_{ik} = 
+\frac{1}{\sqrt N} \omega_N^{ji}, 
+\]
+and therefore the elements of the adjoint are
+\[
+\bra{i} U^{\dagger}\ket{j} = 
+\frac{1}{\sqrt N} \overline{\omega_N^{ji}} = 
+\frac{1}{\sqrt N} \omega_N^{-ji}.
+\]
+It follows that the matrix elements $a_{ij}$ of $U^{\dagger} U$ are given by
+\begin{align*}
+\bra{i} U^{\dagger} U \ket{j} 
+&= \frac{1}{\sqrt N} \sum_{k=0}^{N-1} \omega_N^{jk} \bra{i} U^{\dagger} \ket{k} \\
+&= \frac{1}{\sqrt N} \sum_{k=0}^{N-1} \omega_N^{jk} \omega_N^{-ki} \\
+&= \frac{1}{N} \sum_{k=0}^{N-1} \omega_N^{k(j-i)} \\
+&= \left\{ 
+    \begin{array}{ll}
+        \frac{1}{N} \cdot N = 1 & \text{für $i=j$} \\
+        \frac{1}{N} \cdot \frac{1-\omega_N^{N(j-1)}}{1-\omega_N} = 0 & \text{für $j\not=i$}
+    \end{array}
+    \right..
+\end{align*}
+So $U^{\dagger} U$ is described by the identity matrix, which proves that $U$ is unitary.
+
+
+
+\section{Exercise 5.2}
+
+For $\ket{j} = \ket{0}$, the factors $\omega_N^{jk}$ are all equal to $1$. Therefore, 
+\[
+    U\ket{0} = \frac{1}{\sqrt{N}} \sum_{k=0}^N \ket{k}.
+\]
+
+\section{Exercise 5.3}
+
+
+
+\end{document} 
